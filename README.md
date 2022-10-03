@@ -1,5 +1,7 @@
 # React Product Hunt
 
-> Up vote a product.
+Up vote a product.
 
-- Made with :heart: and `Semantic UI`
+---
+
+Made with :heart: and `Semantic UI`
