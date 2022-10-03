@@ -1,46 +1,36 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Product from './Product'
 
-class ProductList extends React.Component {
-  state = {
-    products: [],
-  }
+const ProductList = () => {
+  const [products, setProducts] = useState(Seed.products)
 
-  componentDidMount() {
-    this.setState({ products: Seed.products })
-  }
-
-  handleProductUpVote = (productId) => {
-    const nextProducts = this.state.products.map((product) => {
+  const handleProductUpVote = (productId) => {
+    const nextProducts = products.map((product) => {
       if (product.id === productId) {
-        // update product.votes
+        // update current product.votes
         return { ...product, votes: product.votes + 1 }
-      } else {
-        return product
       }
+
+      return product
     })
-    this.setState({
-      products: nextProducts,
-    })
+
+    setProducts(nextProducts.sort((a, b) => b.votes - a.votes))
   }
 
-  render() {
-    const products = this.state.products.sort((a, b) => b.votes - a.votes)
-    const productComponents = products.map((product) => (
-      <Product
-        key={'product-' + product.id}
-        id={product.id}
-        title={product.title}
-        description={product.description}
-        url={product.url}
-        votes={product.votes}
-        submitterAvatarUrl={product.submitterAvatarUrl}
-        productImageUrl={product.productImageUrl}
-        onVote={this.handleProductUpVote}
-      />
-    ))
-    return <div className="ui unstackable items">{productComponents}</div>
-  }
+  const productComponents = products.map((product) => (
+    <Product
+      key={'product-' + product.id}
+      id={product.id}
+      title={product.title}
+      description={product.description}
+      url={product.url}
+      votes={product.votes}
+      submitterAvatarUrl={product.submitterAvatarUrl}
+      productImageUrl={product.productImageUrl}
+      onVote={handleProductUpVote}
+    />
+  ))
+  return <div className="ui unstackable items">{productComponents}</div>
 }
 
 export default ProductList
