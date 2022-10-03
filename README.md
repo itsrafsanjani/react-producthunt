@@ -2,4 +2,4 @@
 
 > Up vote a product.
 
-- Made with `Class Component` and `Semantic UI`
+- Made with :heart: and `Semantic UI`
