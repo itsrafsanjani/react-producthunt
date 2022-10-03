@@ -20,13 +20,7 @@ const ProductList = () => {
   const productComponents = products.map((product) => (
     <Product
       key={'product-' + product.id}
-      id={product.id}
-      title={product.title}
-      description={product.description}
-      url={product.url}
-      votes={product.votes}
-      submitterAvatarUrl={product.submitterAvatarUrl}
-      productImageUrl={product.productImageUrl}
+      product={product}
       onVote={handleProductUpVote}
     />
   ))
