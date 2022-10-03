@@ -1,8 +1,16 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Product from './Product'
 
 const ProductList = () => {
-  const [products, setProducts] = useState(Seed.products)
+  const [products, setProducts] = useState([])
+
+  useEffect(() => {
+    sortByVotes(Seed.products)
+  }, [])
+
+  const sortByVotes = (products) => {
+    setProducts(products.sort((a, b) => b.votes - a.votes))
+  }
 
   const handleProductUpVote = (productId) => {
     const nextProducts = products.map((product) => {
@@ -14,7 +22,7 @@ const ProductList = () => {
       return product
     })
 
-    setProducts(nextProducts.sort((a, b) => b.votes - a.votes))
+    sortByVotes(nextProducts)
   }
 
   const productComponents = products.map((product) => (
