@@ -573,6 +573,11 @@ is-core-module@^2.9.0:
   dependencies:
     has "^1.0.3"
 
+jquery@x.*:
+  version "3.6.1"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.6.1.tgz#fab0408f8b45fc19f956205773b62b292c147a16"
+  integrity sha512-opJeO4nCucVnsjiXOE+/PcCgYw9Gwpvs/a6B1LL/lQhwWwpbVEVYDZ1FokFr8PRc7ghYlrFPuyHuiiDNTQxmcw==
+
 "js-tokens@^3.0.0 || ^4.0.0", js-tokens@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-4.0.0.tgz#19203fb59991df98e3a287050d4647cdeaf32499"
@@ -683,6 +688,13 @@ scheduler@^0.23.0:
   integrity sha512-CtuThmgHNg7zIZWAXi3AsyIzA3n4xx7aNyjwC2VJldO2LMVDhFK+63xGqq6CsJH4rTAt6/M+N4GhZiDYPx9eUw==
   dependencies:
     loose-envify "^1.1.0"
+
+semantic-ui-css@^2.4.1:
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/semantic-ui-css/-/semantic-ui-css-2.4.1.tgz#f5aea39fafb787cbd905ec724272a3f9cba9004a"
+  integrity sha512-Pkp0p9oWOxlH0kODx7qFpIRYpK1T4WJOO4lNnpNPOoWKCrYsfHqYSKgk5fHfQtnWnsAKy7nLJMW02bgDWWFZFg==
+  dependencies:
+    jquery x.*
 
 semver@^6.3.0:
   version "6.3.0"
